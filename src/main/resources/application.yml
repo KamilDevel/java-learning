@@ -1,0 +1,36 @@
+server:
+  port: 8081
+
+spring:
+  datasource:
+    url: "jdbc:postgresql://localhost:5432/postgres"
+    driver-class-name: org.postgresql.Driver
+    username: postgres
+    password: postgres
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate
+  sql:
+    init:
+      platform: postgresql
+      mode: always
+  kafka:
+    listener:
+      ack-mode: manual
+    bootstrap-servers:
+      localhost:29092
+    group-id: "Reactor"
+    reactor-topic: "reactor-inbound"
+  openAI:
+    token: "12812817682118789f"
+  firstLib:
+    param1: "<b>param 1 value</b>"
+    param2: "<b>param 2 value</b>"
+  secondLib:
+    param1: "<b>param 1 value</b>"
+    param2: "<b>param 2 value</b>"
+    param3: "<b>param 3 value</b>"
+
+application:
+  server: "localhost:8081"
